@@ -496,7 +496,7 @@ if($setupNewVC -eq 1) {
             $VMIPAddress = $_.Value
 
             My-Logger "Adding ESXi host $VMIPAddress to Cluster ..."
-            Add-VMHost -Server $vc -Location (Get-Cluster -Name $NewVCVSANClusterName) -User "root" -Password $VMPassword -Name $VMIPAddress -Force | Out-File -Append -LiteralPath $verboseLogFile
+            Add-VMHost -Server $vc -Location Datacenter -User "root" -Password $VMPassword -Name $VMIPAddress -Force | Out-File -Append -LiteralPath $verboseLogFile
         }
 
     }
